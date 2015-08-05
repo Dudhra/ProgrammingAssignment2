@@ -1,7 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These function implements the concept of cache to save costly computation again and again, in this case the inverse of the matrix
+## makeCacheMatrix create a matrix which holds both the matrix data as well as its inverse as well
+## cacheSolve class check before computing the inverse that if the inverse of current matrix has been computed already or not
+## if the inverse has not been computed, it computes the inverse and saves with matrix and uses it in future to save time
 
-## Write a short comment describing this function
+## This function is similar to the example
+## makeCacheMatrix holds the matrix and its inverse
+## Initially and whenever new matrix is set through set function
+## then i (inverse of matrix) is made zero as it needed to be recalculated
+## it exposes setrer and getter for both matrix and its inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 	
@@ -22,7 +28,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## To compute the inverse of matrix it first tries to get the inverse of matrix from the passed x matrix
+## if found it prints the message and returns the inverse otherwise it computes the inverse, saves it with matrix and returns the inverse
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
